@@ -1,0 +1,13 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30rem;
+  background: #eef3f7;
+}
+.about h2{
+  font-size: 36px;
+  font-style: oblique;
+}
