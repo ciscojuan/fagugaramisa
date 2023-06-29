@@ -1,0 +1,42 @@
+{
+  "noticias": [
+    {
+      "title": "Noticias1",
+      "fecha": "Fecha",
+      "image": "imagen",
+      "content": "Contenido"
+    },
+    {
+      "title": "Noticias2",
+      "fecha": "Fecha",
+      "image": "imagen",
+      "content": "Contenido"
+    },
+    {
+      "title": "Noticias3",
+      "fecha": "Fecha",
+      "image": "imagen",
+      "content": "Contenido"
+    },
+    {
+      "title": "Noticias2",
+      "fecha": "Fecha",
+      "image": "imagen",
+      "content": "Contenido"
+    }
+  ],
+  "actividades": [
+    {
+      "title": "Actividades",
+      "fecha": "Fecha",
+      "image": "imagen",
+      "content": "Contenido"
+    },
+    {
+      "title": "Actividades",
+      "fecha": "Fecha",
+      "image": "imagen",
+      "content": "Contenido"
+    }
+  ]
+}

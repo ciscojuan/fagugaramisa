@@ -84,7 +84,7 @@ const FormInput = () => {
       <Button 
       variant="contained" 
       type="submit" 
-      sx={{ mt: 2 }}
+      sx={{width: "200px", height: "50px", marginTop: "20px", backgroundColor: "#1b1e24", color: "white"}}
       onClick={handleSubmit(onSubmit)}>
         Enviar
       </Button>

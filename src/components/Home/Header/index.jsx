@@ -5,8 +5,8 @@ const Header = () => {
     return (
         <div className='container'>
             <div className="container__text">
-                <h2>FONDO FAMILIAR</h2>
-                <h1>FAGUGARAMISA</h1>
+                <h2 className="title-home">FONDO FAMILIAR</h2>
+                <h1 className="title-home">FAGUGARAMISA</h1>
                 <p>CALLE 148 # - 40</p>
                 <p>COJUNTO RESIDENCIAL VERACRUZ</p>
                 <p>Sede Principal</p>
