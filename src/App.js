@@ -6,6 +6,7 @@ import Actividades from "./components/Actividades";
 import Footer from "./components/Footer";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Cuenta from "./components/Cuenta";
 
 const App = () => {
   return (
@@ -15,6 +16,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/news" element={<Noticias />} />
+        <Route path="/news/:id" element={<Noticias />} />
+        <Route path="/account" element={<Cuenta />} />
         <Route path="/activities" element={<Actividades />} />
         <Route path='*' element={<Home/>}/>
       </Routes>

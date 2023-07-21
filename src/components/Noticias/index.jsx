@@ -56,18 +56,6 @@ const Noticias = () => {
           ))}
         </Grid>
 
-        <Button
-          variant="contained"
-          sx={{
-            width: "200px",
-            height: "50px",
-            marginTop: "20px",
-            backgroundColor: "#1b1e24",
-            color: "white",
-          }}
-        >
-          Ver más
-        </Button>
       </Container>
     </>
   );
