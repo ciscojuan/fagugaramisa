@@ -7,13 +7,14 @@
   width: 350px;
   height: 500px;
   border: 1px solid #1d1e2b;
-  border-radius: 15px;
+  border-radius: 5px;
   box-shadow: 0 0 20px #ccc;
 }
 
 .noticia-image {
   max-width: 100%;
   margin-bottom: 10px;
+  border-radius: 10px;
 }
 
 .noticia-title {
