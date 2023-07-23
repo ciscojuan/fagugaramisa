@@ -1,14 +1,38 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Noticia from "./Noticia";
-import Activity from '../Activities'
+import Activity from "../Activities";
 import "./noticias.css";
-import data from "../../../utils/noticias.json";
 import Button from "../button";
 import { Link } from "react-router-dom";
 
 const News = () => {
-  const noticias = data.noticias.slice(0, 3);
-  const actividades = data.actividades.slice(0, 3);
+  const url = 'https://fagugaramisa-api.up.railway.app/'
+  const [noticias, setNoticias] = useState([]);
+  const [actividades, setActividades] = useState([]);
+
+  useEffect(() => {
+    const getNoticias = async () => {
+      const res = await fetch(url+'noticias');
+      const data = await res.json();
+      setNoticias(data);
+    };
+    getNoticias();
+  }, []);
+
+  useEffect(() => {
+    const getActividades = async () => {
+      const res = await fetch(
+        url + "actividades"
+      );
+      const data = await res.json();
+      setActividades(data);
+    };
+    getActividades();
+  }, []);
+
+  console.log(noticias);
+  console.log(actividades);
+
   return (
     <>
       <div className="container-news">
@@ -18,7 +42,7 @@ const News = () => {
           Familiar, nos interesa que estés informado.
         </p>
         <div className="noticias">
-          {noticias.map((noticia, index) => (
+          {noticias.slice(0,3).map((noticia, index) => (
             <Noticia
               key={index}
               title={noticia.title}
@@ -40,7 +64,7 @@ const News = () => {
           Familiar, nos interesa que estés informado.
         </p>
         <div className="noticias">
-          {actividades.map((actividad, index) => (
+          {actividades.slice(0,3).map((actividad, index) => (
             <Activity
               key={index}
               title={actividad.title}
