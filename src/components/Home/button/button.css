@@ -1,26 +1,24 @@
-.btn{
-    background: #1d1c28;
-    white-space: nowrap;
-    font-size: 1.7rem;
-    font-weight: 600;
-    color: #fff;
-    padding: 20px 25px;
-    border:0;
-    border-radius: 0.6rem;
-    box-shadow: 0 0 20px 0 #1d1c28;
-    transition: .4s;
-    animation: fadeInDown;
-    animation-duration: .8s;
-    animation-fill-mode: backwards;
-    animation-delay: .8s;
-    outline: none;
-    cursor: pointer;
-}
-.btn:hover{
-    box-shadow: 0 0 40px 0 #0077ff;
+.btn {
+  background: #1d1c28;
+  white-space: nowrap;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 20px 25px;
+  border: 0;
+  border-radius: 0.6rem;
+  box-shadow: 0 0 20px 0 #1d1c28;
+  transition: 0.4s;
+  animation: fadeInDown;
+  animation-duration: 0.8s;
+  animation-fill-mode: backwards;
+  animation-delay: 0.8s;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
-.btnSm{
-    font-size: 1.5rem;
-    padding:  15px 5px;
+.btnSm {
+  font-size: 1.5rem;
+  padding: 15px 5px;
 }

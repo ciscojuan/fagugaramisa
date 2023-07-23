@@ -1,6 +1,7 @@
 import React from "react";
 import data from "../../utils/noticias.json";
-import "./noticias.css";
+import "../Home/News/Noticia/noticia.css";
+import'./noticias.css'
 import { Button, Container, Grid, Typography, Card, CardActions, CardContent, CardMedia } from "@mui/material";
 const Noticias = () => {
   const noticias = data.noticias;
@@ -21,40 +22,23 @@ const Noticias = () => {
           Residencial Sol Naciente, nos interesa que estés informado.
         </p>
 
-        <Grid container spacing={5}>
-          {noticias.map((noticia) => (
-            <Grid item xs={4}>
-              <Card sx={{ maxWidth: 345 }}>
-                <CardMedia
-                  sx={{ height: 140 }}
-                  image="/img/news/noticias.jpg"
-                  title={noticia.title}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {noticia.title}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {noticia.content}
-                  </Typography>
-                </CardContent>
-                <CardActions>
-
-                  <Button size="medium" 
-                  variant="contained" 
-                  sx={{
-                    width: "200px",
-                    height: "50px",
-                    marginTop: "20px",
-                    backgroundColor: "#1b1e24",
-                    color: "white",
-                  }}
-                  >Ver Noticia</Button>
-                </CardActions>
-              </Card>
-            </Grid>
+        <div className="noticias" spacing={5}>
+          {noticias.map((noticia, index) => (
+            <div className="noticia" key={index}>
+            <div className="noticia-title">
+              <h5>{noticia.title}</h5>
+            </div>
+            <div className="noticia-image">
+                <img src={noticia.image} alt={noticia.title} />
+            </div>
+            <div className="noticia-message">
+              <p className="parrafo-noticias">{noticia.content}</p>
+            </div>
+            
+            <button className="btn">Ver Noticia</button>
+          </div>
           ))}
-        </Grid>
+        </div>
 
       </Container>
     </>

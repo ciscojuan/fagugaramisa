@@ -4,19 +4,18 @@ import Button from "../../button";
 
 
 
-const Noticia = (props) => {
-  const { title, image, message } = props;
+const Noticia = ( { title, image, content }) => {
 
   return (
     <div className="noticia">
-      <div className="noticia-image">
-          <img src={image} alt={title} />
-      </div>
       <div className="noticia-title">
         <h5>{title}</h5>
       </div>
+      <div className="noticia-image">
+          <img src={image} alt={title} />
+      </div>
       <div className="noticia-message">
-        <p>{message}</p>
+        <p className="parrafo-noticias">{content}</p>
       </div>
       
       <button className="btn">Ver Noticia</button>
