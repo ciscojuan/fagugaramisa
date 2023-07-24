@@ -11,7 +11,7 @@ const Noticias = () => {
     axios.get(url + "noticias").then((res) => setNoticias(res.data));
   }, []);
 
-  console.log(noticias);
+  console.log('Noticias', noticias);
 
   return (
     <>
