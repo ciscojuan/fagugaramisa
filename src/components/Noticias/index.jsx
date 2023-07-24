@@ -4,7 +4,7 @@ import "../Home/News/Noticia/noticia.css";
 import'./noticias.css'
 import { Container, Typography } from "@mui/material";
 const Noticias = () => {
-  const url = "https://fagugaramisa-api.up.railway.app/";
+  const url = "https://fagugaramisa-api.up.railway.app/fagugaramisa/";
   const [noticias, setNoticias] = useState([]);
 
   useEffect(() => {
