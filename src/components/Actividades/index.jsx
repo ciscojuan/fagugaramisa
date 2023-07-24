@@ -1,11 +1,18 @@
-import React from "react";
-import data from "../../utils/noticias.json";
-import "../Home/News/Noticia/noticia.css";
-import'./actividades.css'
-import { Button, Container, Grid, Typography, Card, CardActions, CardContent, CardMedia } from "@mui/material";
-const Activities = () => {
-  const actividades = data.actividades;
+import React, { useEffect, useState } from "react";
 
+import "../Home/News/Noticia/noticia.css";
+import "./actividades.css";
+import { Container, Typography } from "@mui/material";
+import axios from "axios";
+const Activities = () => {
+  const url = "https://fagugaramisa-api.up.railway.app/";
+  const [actividades, setActividades] = useState([]);
+
+  useEffect(() => {
+    axios.get(url + "actividades").then((res) => setActividades(res.data));
+  }, []);
+
+  console.log(actividades);
   return (
     <>
       <div className="banner-news">
@@ -25,21 +32,20 @@ const Activities = () => {
         <div className="noticias" spacing={5}>
           {actividades.map((actividad, index) => (
             <div className="noticia" key={index}>
-            <div className="noticia-title">
-              <h5>{actividad.title}</h5>
-            </div>
-            <div className="noticia-image">
+              <div className="noticia-title">
+                <h5>{actividad.title}</h5>
+              </div>
+              <div className="noticia-image">
                 <img src={actividad.image} alt={actividad.title} />
+              </div>
+              <div className="noticia-message">
+                <p className="parrafo-noticias">{actividad.content}</p>
+              </div>
+
+              <button className="btn">Ver Noticia</button>
             </div>
-            <div className="noticia-message">
-              <p className="parrafo-noticias">{actividad.content}</p>
-            </div>
-            
-            <button className="btn">Ver Noticia</button>
-          </div>
           ))}
         </div>
-
       </Container>
     </>
   );

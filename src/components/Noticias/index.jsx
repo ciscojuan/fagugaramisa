@@ -1,10 +1,17 @@
-import React from "react";
-import data from "../../utils/noticias.json";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "../Home/News/Noticia/noticia.css";
 import'./noticias.css'
-import { Button, Container, Grid, Typography, Card, CardActions, CardContent, CardMedia } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 const Noticias = () => {
-  const noticias = data.noticias;
+  const url = "https://fagugaramisa-api.up.railway.app/";
+  const [noticias, setNoticias] = useState([]);
+
+  useEffect(() => {
+    axios.get(url + "noticias").then((res) => setNoticias(res.data));
+  }, []);
+
+  console.log(noticias);
 
   return (
     <>

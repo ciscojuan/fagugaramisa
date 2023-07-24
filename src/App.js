@@ -9,6 +9,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cuenta from "./components/Cuenta";
 
 const App = () => {
+
+//configure CORS to make request to the railways api
+// const cors = require('cors'); 
+// app.use(cors());
+// app.options('*', cors());
+
   return (
     <Router>
       <Nav />
