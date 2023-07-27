@@ -4,7 +4,7 @@ import "../Home/News/Noticia/noticia.css";
 import'./noticias.css'
 import { Container, Typography } from "@mui/material";
 const Noticias = () => {
-  const url = "http://localhost:3000/api/v1/";
+  const url = "https://fagugaramisa-api.onrender.com/api/v1/";
   const [noticias, setNoticias] = useState([]);
 
   useEffect(() => {

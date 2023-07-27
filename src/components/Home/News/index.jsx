@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 
 
 const News = () => {
-  //const url = 'https://fagugaramisa-api.up.railway.app/'
-  const url = 'http://localhost:3000/api/v1/'
+  const url = 'https://fagugaramisa-api.onrender.com/api/v1/'
+  //const url = 'http://localhost:3000/api/v1/'
   const [noticias, setNoticias] = useState([]);
   const [actividades, setActividades] = useState([]);
 
