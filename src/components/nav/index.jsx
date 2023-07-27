@@ -28,7 +28,7 @@ const Nav = () => {
       <nav className="nav">
         <ul className="nav__menu">
           <Anchor content="Home" href="/home" />
-          <Anchor content="Cuenta" href="/account" />
+          <Anchor content="Galeria" href="/gallery" />
           <Anchor content="Noticias" href="/news" />
           <Anchor content="Actividades" href="/activities" />
         </ul>

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "../Home/News/Noticia/noticia.css";
 import'./actividades.css'
 import { Container, Typography } from "@mui/material";
 const Actividades = () => {
-  const url = "http://localhost:3000/api/v1/";
+  const url = "https://fagugaramisa-api.onrender.com/api/v1/";
   const [actividades, setActividades] = useState([]);
 
   useEffect(() => {
@@ -17,18 +16,17 @@ const Actividades = () => {
 
   return (
     <>
-      <div className="banner-news">
+      <div className="banner-activities">
         <div className="box">
-          <h1 className="title-news">Noticias FAGUGARAMISA</h1>
+          <h1 className="title-activities">ACTIVIDADES FAGUGARAMISA</h1>
         </div>
       </div>
       <Container maxWidth="xl">
-        <Typography variant="h1" component="h2" mt={5}>
-          NOTICIAS
+        <Typography variant="h1" component="h2" mt={5} >
+          ACTIVIDADES
         </Typography>
-        <p className="parrafo-noticias">
-          Aquí encontrarás todas las noticias y novedades de nuestro Parque
-          Residencial Sol Naciente, nos interesa que estés informado.
+        <p className="parrafo-activities">
+          Aquí encontrarás todas las actividades de nuestro Fondo familiar, nos interesa que estés informado.
         </p>
 
         <div className="noticias" spacing={5}>

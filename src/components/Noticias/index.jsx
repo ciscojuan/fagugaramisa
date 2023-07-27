@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import "../Home/News/Noticia/noticia.css";
-import'./noticias.css'
 import { Container, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import Noticia from "./Noticia";
+import axios from "axios";
+import "../Home/Novedades/News/noticia.css";
+import'./noticias.css'
 const Noticias = () => {
+  const navigate = useNavigate();
   const url = "https://fagugaramisa-api.onrender.com/api/v1/";
   const [noticias, setNoticias] = useState([]);
 
@@ -47,7 +50,7 @@ const Noticias = () => {
               <p className="parrafo-noticias">{noticia.content}</p>
             </div>
             
-            <button className="btn">Ver Noticia</button>
+            <button className="btn" onClick={() =>navigate(`/news/${noticia.id}`)}>Ver Noticia</button>
           </div>
           ))}
         </div>

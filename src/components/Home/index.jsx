@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Header from './Header'
-import News from './News'
+import Novedades from './Novedades'
 import KPI from './KPI'
 import About from './About'
 import Contact from './Contact'
@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <>
           <Header/>
-          <News />
+          <Novedades />
           <KPI></KPI>
           <About />
           <Contact />
