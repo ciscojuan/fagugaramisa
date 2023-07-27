@@ -4,14 +4,16 @@ import "../Home/News/Noticia/noticia.css";
 import'./noticias.css'
 import { Container, Typography } from "@mui/material";
 const Noticias = () => {
-  const url = "https://fagugaramisa-api.up.railway.app/fagugaramisa/";
+  const url = "http://localhost:3000/api/v1/";
   const [noticias, setNoticias] = useState([]);
 
   useEffect(() => {
-    axios.get(url + "noticias").then((res) => setNoticias(res.data));
+    axios.get(url + "news/").then((res) => setNoticias(res.data.news));
   }, []);
 
-  console.log('Noticias', noticias);
+  console.log({
+    noticias: noticias
+  });
 
   return (
     <>
@@ -30,13 +32,16 @@ const Noticias = () => {
         </p>
 
         <div className="noticias" spacing={5}>
-          {noticias.map((noticia, index) => (
+          {noticias && noticias.map((noticia, index) => (
             <div className="noticia" key={index}>
             <div className="noticia-title">
               <h5>{noticia.title}</h5>
             </div>
             <div className="noticia-image">
-                <img src={noticia.image} alt={noticia.title} />
+                <img src={noticia.image && 'fagugaramisa/img/news/noticias.jpg'} alt={noticia.title} />
+            </div>
+            <div className="noticia-date">
+                <span>{noticia.fecha}</span>
             </div>
             <div className="noticia-message">
               <p className="parrafo-noticias">{noticia.content}</p>

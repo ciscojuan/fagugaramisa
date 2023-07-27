@@ -1,38 +1,36 @@
 import React, {useEffect, useState} from "react";
 import Noticia from "./Noticia";
 import Activity from "../Activities";
+import axios from 'axios';
 import "./noticias.css";
 import Button from "../button";
 import { Link } from "react-router-dom";
 
+
 const News = () => {
-  const url = 'https://fagugaramisa-api.up.railway.app/'
+  //const url = 'https://fagugaramisa-api.up.railway.app/'
+  const url = 'http://localhost:3000/api/v1/'
   const [noticias, setNoticias] = useState([]);
   const [actividades, setActividades] = useState([]);
 
   useEffect(() => {
-    const getNoticias = async () => {
-      const res = await fetch(url+'noticias');
-      const data = await res.json();
-      setNoticias(data);
-    };
-    getNoticias();
+    axios.get(url + "/news/")
+      .then((res) => {
+        console.log(res.data.news);
+        setNoticias(res.data.news);     
+      })
+      .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
-    const getActividades = async () => {
-      const res = await fetch(
-        url + "actividades"
-      );
-      const data = await res.json();
-      setActividades(data);
-    };
-    getActividades();
+    axios.get(url + "activities/")
+      .then((res) => {
+        console.log(res.data.activities);
+        setActividades(res.data.activities)
+      })
+      .catch((err) => console.log(err));
   }, []);
-
-  console.log(noticias);
-  console.log(actividades);
-
+    
   return (
     <>
       <div className="container-news">
@@ -42,9 +40,9 @@ const News = () => {
           Familiar, nos interesa que estés informado.
         </p>
         <div className="noticias">
-          {noticias.slice(0,3).map((noticia, index) => (
+          {noticias && noticias.slice(0, 3).map((noticia) => (
             <Noticia
-              key={index}
+              key={noticia.id}
               title={noticia.title}
               fecha={noticia.fecha}
               image={noticia.image}
@@ -64,12 +62,12 @@ const News = () => {
           Familiar, nos interesa que estés informado.
         </p>
         <div className="noticias">
-          {actividades.slice(0,3).map((actividad, index) => (
+          {actividades && actividades.slice(0,3).map((actividad, index) => (
             <Activity
               key={index}
               title={actividad.title}
               fecha={actividad.fecha}
-              image={actividad.image}
+              image={actividad.image && 'fagugaramisa/img/activities/activity.jpg'}
               content={actividad.content}
             />
           ))}

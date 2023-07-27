@@ -1,4 +1,5 @@
 import React from "react";
+import headQuarter from '../../../assets/img/headquarters.png';
 import './header.css'
 
 const Header = () => {
@@ -15,7 +16,7 @@ const Header = () => {
                 </div>
             </div>
             <div className="container__img">
-                <img src="/img/headquarters.png" alt="COJUNTO RESIDENCIAL VERACRUZ" />
+                <img src={headQuarter} alt="COJUNTO RESIDENCIAL VERACRUZ" />
             </div>
         </div>
     )

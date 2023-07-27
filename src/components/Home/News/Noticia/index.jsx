@@ -12,7 +12,9 @@ const Noticia = ( { title, image, content }) => {
         <h5>{title}</h5>
       </div>
       <div className="noticia-image">
-          <img src={image} alt={title} />
+          <img 
+          src={ image && 'fagugaramisa/img/news/noticias.jpg'}
+          alt={title} />
       </div>
       <div className="noticia-message">
         <p className="parrafo-noticias">{content}</p>
