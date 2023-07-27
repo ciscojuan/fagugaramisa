@@ -9,14 +9,12 @@ import { Link } from "react-router-dom";
 
 const News = () => {
   const url = 'https://fagugaramisa-api.onrender.com/api/v1/'
-  //const url = 'http://localhost:3000/api/v1/'
   const [noticias, setNoticias] = useState([]);
   const [actividades, setActividades] = useState([]);
 
   useEffect(() => {
     axios.get(url + "/news/")
       .then((res) => {
-        console.log(res.data.news);
         setNoticias(res.data.news);     
       })
       .catch((err) => console.log(err));
@@ -25,7 +23,6 @@ const News = () => {
   useEffect(() => {
     axios.get(url + "activities/")
       .then((res) => {
-        console.log(res.data.activities);
         setActividades(res.data.activities)
       })
       .catch((err) => console.log(err));
