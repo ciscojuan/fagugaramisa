@@ -1,16 +1,17 @@
 {
   "files": {
     "main.css": "/fagugaramisa/static/css/main.c5b72623.css",
-    "main.js": "/fagugaramisa/static/js/main.285414a3.js",
+    "main.js": "/fagugaramisa/static/js/main.e5c5fdd1.js",
+    "static/media/headquarters.png": "/fagugaramisa/static/media/headquarters.c63ce76d37c663ff73f0.png",
     "static/media/logo.jpg": "/fagugaramisa/static/media/logo.2b0237bc5ea4f595c892.jpg",
     "static/media/banner.jpeg": "/fagugaramisa/static/media/banner.b7329e2bb8ded574f1d8.jpeg",
     "static/media/noticias.jpg": "/fagugaramisa/static/media/noticias.0dbf87e490deca6b1446.jpg",
     "index.html": "/fagugaramisa/index.html",
     "main.c5b72623.css.map": "/fagugaramisa/static/css/main.c5b72623.css.map",
-    "main.285414a3.js.map": "/fagugaramisa/static/js/main.285414a3.js.map"
+    "main.e5c5fdd1.js.map": "/fagugaramisa/static/js/main.e5c5fdd1.js.map"
   },
   "entrypoints": [
     "static/css/main.c5b72623.css",
-    "static/js/main.285414a3.js"
+    "static/js/main.e5c5fdd1.js"
   ]
 }
