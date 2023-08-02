@@ -1,0 +1,23 @@
+.container-news{
+    margin: 5rem 0;
+    display: grid;
+    place-items: center;
+}
+h1{
+    font-size: 4rem;
+}
+.news{
+    color: #1c1d1c;
+}
+p{
+    margin-top: 30px;
+    font-size: 20px;
+}
+.noticias{
+    margin: 100px 0;
+    width: 1200px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+}
