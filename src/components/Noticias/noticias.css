@@ -26,3 +26,8 @@
   color: #000;
   font-size: 20px;
 }
+
+.noticia-message{
+  width: 90%;
+  text-align: center;
+}

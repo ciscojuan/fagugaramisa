@@ -10,7 +10,12 @@
     top: 0;
     left: 0;
   }
-  
+  .noticia{
+    height: 600px;
+  }
+  .noticia-image img{
+
+  }
   .title-activities {
     text-align: center;
     position: absolute;
@@ -22,22 +27,11 @@
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.75);
   }
   
+  .noticia-message{
+    width: 90%;
+    text-align: center;
+  }
   .parrafo-activities{
     color: #000;
     font-size: 1.5rem;
   }
-  .title-actividades {
-    text-align: center;
-    color: white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 80px;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.75);
-  }
-  
-  .parrafo-noticias{
-    color: #000;
-    font-size: 20px;
-  }
-  

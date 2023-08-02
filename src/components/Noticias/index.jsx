@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import Noticia from "./Noticia";
+import Image from '../../assets/img/news/noticias.jpg'
 import axios from "axios";
 import "../Home/Novedades/News/noticia.css";
 import'./noticias.css'
@@ -11,7 +11,7 @@ const Noticias = () => {
   const [noticias, setNoticias] = useState([]);
 
   useEffect(() => {
-    axios.get(url + "news/").then((res) => setNoticias(res.data));
+    axios.get(url + "category/noticias").then((res) => setNoticias(res.data));
   }, []);
 
   console.log({
@@ -26,12 +26,11 @@ const Noticias = () => {
         </div>
       </div>
       <Container maxWidth="xl">
-        <Typography variant="h1" component="h2" mt={5}>
-          NOTICIAS
+        <Typography variant="h1" component="h2" mt={5} >
+          ACTIVIDADES
         </Typography>
-        <p className="parrafo-noticias">
-          Aquí encontrarás todas las noticias y novedades de nuestro Parque
-          Residencial Sol Naciente, nos interesa que estés informado.
+        <p className="parrafo-activities">
+          Aquí encontrarás todas las noticias de nuestro Fondo familiar, para que siempre estés bien informado de lo que ocurre en FAGUGARAMISA.
         </p>
 
         <div className="noticias" spacing={5}>
@@ -41,16 +40,16 @@ const Noticias = () => {
               <h5>{noticia.title}</h5>
             </div>
             <div className="noticia-image">
-                <img src={noticia.image && 'fagugaramisa/img/news/noticias.jpg'} alt={noticia.title} />
+                <img src={noticia.image ? noticia.image : Image} alt={noticia.title} />
             </div>
             <div className="noticia-date">
-                <span>{noticia.fecha}</span>
+                <span>{noticia.createdAt.slice(0,10)}</span>
             </div>
             <div className="noticia-message">
-              <p className="parrafo-noticias">{noticia.content}</p>
+              <p className="parrafo-noticias">{noticia.content.slice(0,100)}</p>
             </div>
             
-            <button className="btn" onClick={() =>navigate(`/news/${noticia.id}`)}>Ver Noticia</button>
+            <button className="btn" onClick={() =>navigate(`/news/${noticia._id}`)}>Ver Noticia</button>
           </div>
           ))}
         </div>

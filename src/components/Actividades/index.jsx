@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import imageA from '../../assets/img/activities/activity.jpg'
 import'./actividades.css'
 import { Container, Typography } from "@mui/material";
 const Actividades = () => {
@@ -7,7 +8,7 @@ const Actividades = () => {
   const [actividades, setActividades] = useState([]);
 
   useEffect(() => {
-    axios.get(url + "actividades").then((res) => setActividades(res.data));
+    axios.get(url + "/category/actividades").then((res) => setActividades(res.data));
   }, []);
 
   console.log({
@@ -36,13 +37,13 @@ const Actividades = () => {
               <h5>{actividad.title}</h5>
             </div>
             <div className="noticia-image">
-                <img src={actividad.image && 'fagugaramisa/img/activities/activity.jpg'} alt={actividad.title} />
+                <img src={actividad.image ?actividad.image : imageA} alt={actividad.title} />
             </div>
             <div className="noticia-date">
                 <span>{actividad.createdAt.slice(0,10)}</span>
             </div>
             <div className="noticia-message">
-              <p className="parrafo-noticias">{actividad.content}</p>
+              <p className="parrafo-noticias">{actividad.content.slice(0,200)}</p>
             </div>
             
             <button className="btn">Ver Noticia</button>
