@@ -7,11 +7,11 @@ import "../Home/Novedades/News/noticia.css";
 import'./noticias.css'
 const Noticias = () => {
   const navigate = useNavigate();
-  const url = "https://fagugaramisa-api.onrender.com/api/v1/";
+  const url = "http://localhost:38600/api/v1/posts/";
   const [noticias, setNoticias] = useState([]);
 
   useEffect(() => {
-    axios.get(url + "news/").then((res) => setNoticias(res.data.news));
+    axios.get(url + "news/").then((res) => setNoticias(res.data));
   }, []);
 
   console.log({

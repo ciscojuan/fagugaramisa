@@ -3,11 +3,11 @@ import axios from "axios";
 import'./actividades.css'
 import { Container, Typography } from "@mui/material";
 const Actividades = () => {
-  const url = "https://fagugaramisa-api.onrender.com/api/v1/";
+  const url = "http://localhost:38600/api/v1/posts/";
   const [actividades, setActividades] = useState([]);
 
   useEffect(() => {
-    axios.get(url + "activities/").then((res) => setActividades(res.data.activities));
+    axios.get(url + "actividades").then((res) => setActividades(res.data));
   }, []);
 
   console.log({
@@ -39,7 +39,7 @@ const Actividades = () => {
                 <img src={actividad.image && 'fagugaramisa/img/activities/activity.jpg'} alt={actividad.title} />
             </div>
             <div className="noticia-date">
-                <span>{actividad.fecha}</span>
+                <span>{actividad.createdAt.slice(0,10)}</span>
             </div>
             <div className="noticia-message">
               <p className="parrafo-noticias">{actividad.content}</p>
