@@ -8,6 +8,8 @@ import Galeria from "./components/Galeria";
 import Footer from "./components/Footer";
 import Cuenta from "./components/Cuenta";
 import CrearNoticia from "./components/Cuenta/CrearNoticia";
+import SignUp from "./components/Cuenta/SingUp";
+import Login from "./components/Cuenta/Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
@@ -28,6 +30,8 @@ const App = () => {
         <Route path="/news/:id" element={<Noticias />} />
         <Route path="/news/:id/" element={<Noticia />} />
         <Route path="/account" element={<Cuenta />} />
+        <Route path="/sing-up" element={<SignUp />} />" 
+        <Route path="/login" element={<Login />} />"
         <Route path='/create-news' element={<CrearNoticia />} />
         <Route path="/activities" element={<Actividades />} />
         <Route path="/gallery" element={<Galeria />} />"

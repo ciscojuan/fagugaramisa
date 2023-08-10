@@ -1,28 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
+import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+import { Link } from "react-router-dom";
 import Anchor from "./Link";
 import "./nav.css";
 
 const Nav = () => {
-  //crea una funcion que cambie el background del nav cuando se haga scroll
-  const [scroll, setScroll] = useState(false);
-
+  const [user, setUser] = useState(
+   false
+  );
+    console.log(user);  
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setScroll(true);
-      } else {
-        setScroll(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    // This effect will run on component mount
+    const storedUser = window.localStorage.getItem("user");
+    setUser(storedUser !== null);
   }, []);
 
+  const handleLogout = () => {
+    try {
+      setUser("");
+      localStorage.removeItem("user");
+    } catch (err) {
+      console.lof(err);
+    }
+  };
+
   return (
-    <header className={scroll ? "header onScroll" : "header"} data-scroll={scroll}>
+    <header className="header">
       <div className="logo"></div>
 
       <nav className="nav">
@@ -33,20 +37,26 @@ const Nav = () => {
           <Anchor content="Actividades" href="/activities" />
         </ul>
         <div className="nav__flags">
-          <div className="nav__flags--item">
-            <img
-              src="assets/images/main/icon-es.png"
-              alt="Espanish"
-              data-language="es"
-            />
-          </div>
-          <div className="nav__flags--item">
-            <img
-              src="assets/images/main/icon-en.png"
-              alt="English"
-              data-language="gb"
-            />
-          </div>
+          {user === false ? (
+            <div className="nav__flags--item">
+              <Link to="/login">
+                <LoginOutlinedIcon
+                  color="primary"
+                  fontSize="large"
+                  className="log"
+                ></LoginOutlinedIcon>
+              </Link>
+            </div>
+          ) : (
+            <div className="nav__flags--item">
+              <LogoutOutlinedIcon
+                color="primary"
+                fontSize="large"
+                className="log"
+                onClick={handleLogout}
+              ></LogoutOutlinedIcon>
+            </div>
+          )}
         </div>
       </nav>
     </header>

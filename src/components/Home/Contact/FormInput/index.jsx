@@ -19,7 +19,7 @@ const FormInput = () => {
     reset()
   };
   return (
-    <Box>
+    <form >
       <TextField
         id="name"
         label="Escribe tu nombre."
@@ -39,8 +39,7 @@ const FormInput = () => {
         aria-invalid={errors.name ? "true" : "false"}
         fullWidth
         margin="normal"
-        
-        
+    
       />
       <span className="text-alert">{errors.name && errors.name.message}</span>
       <TextField
@@ -88,7 +87,7 @@ const FormInput = () => {
       onClick={handleSubmit(onSubmit)}>
         Enviar
       </Button>
-    </Box>
+    </form>
   );
 };
 

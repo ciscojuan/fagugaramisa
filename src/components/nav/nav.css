@@ -73,3 +73,16 @@
     -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
   }
+.log{
+    color: #fff !important;
+    font-size: 3rem !important;
+  }
+
+.log:hover{
+  font-size: 3.5rem !important;
+}
+
+
+.nav__flags--item:hover{
+  cursor:pointer;
+}

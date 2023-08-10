@@ -11,9 +11,7 @@ const Actividades = () => {
     axios.get(url + "/category/actividades").then((res) => setActividades(res.data));
   }, []);
 
-  console.log({
-    actividades: actividades
-  });
+  
 
   return (
     <>

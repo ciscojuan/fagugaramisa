@@ -14,9 +14,7 @@ const Noticias = () => {
     axios.get(url + "category/noticias").then((res) => setNoticias(res.data));
   }, []);
 
-  console.log({
-    noticias: noticias
-  });
+
 
   return (
     <>

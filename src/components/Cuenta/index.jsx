@@ -1,6 +1,4 @@
 import React from "react";
-import { Card } from "@mui/material";
-import { Link } from "react-router-dom";
 import "./cuenta.css";
 
 const Cuenta = ({ card }) => {

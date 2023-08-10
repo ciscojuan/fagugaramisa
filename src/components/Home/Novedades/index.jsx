@@ -19,7 +19,6 @@ const Novedades = () => {
       .then((res) => {
         setNoticias(res.data);     
       })
-      .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
@@ -39,9 +38,9 @@ const Novedades = () => {
           Familiar, nos interesa que estés informado.
         </p>
         <div className="noticias">
-          {noticias && noticias.slice(0, 3).map((noticia) => (
-            <Noticias
-              key={noticia.id}
+          {noticias && noticias.slice(0, 3).map((noticia, index) => (
+            <Noticias 
+              key={index}
               title={noticia.title}
               fecha={noticia.fecha}
               image={noticia.image ? noticia.image : NewsImage}
